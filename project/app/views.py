@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from app.forms import *
-from django.views.generic import View
+from django.views.generic import View, FormView
 # Create your views here.
 
 def  insertschoolbyfbv(request):
@@ -28,3 +28,12 @@ class InsertSchoolByCBV(View):
          SFDO.save()
          return HttpResponse('School Created Successfully using Class based views')
       return HttpResponse('Invalid Data')
+   
+
+class InsertSchoolBYFV(FormView):
+   template_name = 'InsertSchoolBYFV.html'
+   form_class = SchoolForm
+   
+   def form_valid(self, form):
+      form.save()
+      return HttpResponse('InsertSchoolBYFV is done')

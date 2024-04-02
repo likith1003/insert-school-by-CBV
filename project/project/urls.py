@@ -21,5 +21,6 @@ from app.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('insertschoolbyfbv', insertschoolbyfbv, name='insertschoolbyfbv'),
-    path('InsertSchoolByCBV', InsertSchoolByCBV.as_view(), name='InsertSchoolByCBV')
+    path('InsertSchoolByCBV', InsertSchoolByCBV.as_view(), name='InsertSchoolByCBV'),
+    path('InsertSchoolBYFV', InsertSchoolBYFV.as_view(), name='InsertSchoolBYFV'),
 ]
